@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.boyaa.demo2"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="17" />
+   
+    <!-- Push SDK权限 -->
+    <permission android:protectionLevel="normal" android:name="com.boyaa.permission.push"></permission>
+
+    <uses-permission android:name="com.boyaa.permission.push"/><!-- 添加自定义的权限-->
+	<uses-permission android:name="android.permission.READ_LOGS" />
+	<uses-permission android:name="android.permission.INTERNET" />
+	<uses-permission android:name="android.permission.READ_PHONE_STATE" />
+	<uses-permission android:name="android.permission.WAKE_LOCK" />
+	<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />	
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+	<uses-permission android:name="android.permission.VIBRATE" />
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+	<uses-permission android:name="android.permission.RECEIVE_USER_PRESENT" />
+	
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.boyaa.demo2.MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+        <service
+   		    android:label="PushService"
+        	android:name="com.boyaa.push.lib.service.PushService"
+        	android:process="com.boyaa.push"
+        	android:permission="com.boyaa.permission.push"
+        	android:exported="true">
+             <intent-filter>
+                 <action android:name="com.boyaa.push.lib.service.PushService"/>
+             </intent-filter>
+        </service>
+    </application>
+
+</manifest>

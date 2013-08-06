@@ -1,0 +1,77 @@
+<ScrollView 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/darker_gray"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".MainActivity" >
+    <LinearLayout
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content" 
+	    android:orientation="vertical">
+	    
+	    <LinearLayout 
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_weight="1.0"
+	        android:gravity="center"
+	        android:background="@android:color/white">
+			    <Button
+			        android:id="@+id/gameIdBtn"
+			        android:layout_width="match_parent"
+			        android:layout_height="wrap_content"
+			        android:text="绑定"/>
+	    </LinearLayout>
+	    
+	    
+	    <LinearLayout 
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:orientation="vertical"
+	        android:layout_marginTop="15.0dp"
+	        android:background="@android:color/white">
+			            <EditText
+					        android:id="@+id/sendContent" 
+					        android:layout_width="match_parent"
+					        android:layout_height="wrap_content"
+					        android:layout_weight="1.0"
+					        android:hint="要发送的数据"
+					        android:lines="5"/>
+			            
+			            <Button
+							        android:id="@+id/send"
+							        android:layout_width="100.0dp"
+							        android:layout_height="wrap_content"
+							        android:text="发送"/>
+	        
+	    </LinearLayout>
+	    
+	    
+	    <LinearLayout 
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_marginTop="15.0dp"
+	        android:layout_weight="1.0"
+	        android:orientation="vertical"
+	        android:background="@android:color/white">
+	            <EditText
+			        android:id="@+id/recContent" 
+			        android:layout_width="match_parent"
+			        android:layout_height="wrap_content"
+			        android:layout_weight="1.0"
+			        android:hint="接收到的数据"
+			        android:lines="10"/>
+			    <Button
+			        android:id="@+id/clear"
+			        android:layout_width="100.0dp"
+			        android:layout_height="wrap_content"
+			        android:text="清空消息"/>
+	    </LinearLayout>
+	</LinearLayout>
+</ScrollView>
+
