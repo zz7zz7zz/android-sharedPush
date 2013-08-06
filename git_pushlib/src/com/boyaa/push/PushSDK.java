@@ -48,6 +48,7 @@ public class PushSDK {
 	 */
 	public boolean registerApp(Context context)
 	{
+		mContext=context.getApplicationContext();
 		Intent mIntent=new Intent(PushService.class.getName());
 		context.startService(mIntent);
 		return context.bindService(mIntent, conn, Context.BIND_AUTO_CREATE);
@@ -57,13 +58,13 @@ public class PushSDK {
 	 * 解注册应用，解注册后无法收到推送消息
 	 * @param context 上下文
 	 */
-	public void unRegisterApp(Context context)
+	public void unRegisterApp()
 	{
 		try {
 			if(null!=mService)
 			{
 				mService.unregisterCallback(null,mCallBack);
-				context.unbindService(conn);
+				mContext.unbindService(conn);
 				mService=null;
 			}
 		} catch (Exception e) {

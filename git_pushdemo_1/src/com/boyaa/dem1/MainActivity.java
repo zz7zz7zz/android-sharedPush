@@ -94,7 +94,7 @@ public class MainActivity extends Activity {
 		if(keyCode==KeyEvent.KEYCODE_BACK)
 		{
 			PushSDK.getInstance().unRegisterPushListener(pushListener);
-			PushSDK.getInstance().unRegisterApp(getApplicationContext());
+			PushSDK.getInstance().unRegisterApp();
 			android.os.Process.killProcess(android.os.Process.myPid());
 		}
 		return super.onKeyDown(keyCode, event);
