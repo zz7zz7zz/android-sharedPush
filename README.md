@@ -8,7 +8,7 @@ android-push
 
 ## 二、原理图 
 
-![github](http://img.blog.csdn.net/20130806123850390 "附图一")
+![github](https://github.com/zz7zz7zz/android-push/blob/master/1.jpg "附图一")
 
 
 
